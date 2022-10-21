@@ -1,4 +1,5 @@
 #!/bin/sh
+chmod 777 -R /app/var
 echo "***********************************************"
 echo "* STARTS: service apache2                     *"
 service apache2 restart
@@ -17,5 +18,4 @@ echo "* STARTS: npm run build                        *"
 npm run build
 echo "*                DONE                         *"
 echo "***********************************************"
-chmod g+w -R /app/var
 tail -f /dev/null
