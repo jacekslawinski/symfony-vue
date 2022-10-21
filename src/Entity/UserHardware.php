@@ -12,13 +12,13 @@ use Symfony\Component\Serializer\Annotation\Groups;
 #[ORM\Table(name: 'user_hardwares')]
 class UserHardware
 {
-    #[ORM\ManyToOne(targetEntity: 'User', cascade:['persist'])]
+    #[ORM\ManyToOne(targetEntity: User::class, cascade:['persist'])]
     #[ORM\JoinColumn(name: 'user_id', referencedColumnName:'id', nullable: false)]
     #[Groups(['hardware'])]
     private User $user;
 
     #[ORM\Id]
-    #[ORM\OneToOne(targetEntity: 'Hardware', cascade:['persist'])]
+    #[ORM\OneToOne(targetEntity: Hardware::class, cascade:['persist'])]
     #[ORM\JoinColumn(name: 'hardware_id', referencedColumnName:'id', nullable: false)]
     #[Groups(['user'])]
     private Hardware $hardware;

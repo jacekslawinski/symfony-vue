@@ -52,7 +52,7 @@ class Hardware
     #[Groups(['hardware'])]
     private ?int $systemId = null;
 
-    #[ORM\OneToOne(targetEntity: 'UserHardware', mappedBy: 'hardware', cascade:['persist'])]
+    #[ORM\OneToOne(targetEntity: UserHardware::class, mappedBy: 'hardware', cascade:['persist'])]
     #[Groups(['hardware'])]
     private ?UserHardware $userHardware = null;
 

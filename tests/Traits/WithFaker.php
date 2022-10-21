@@ -7,7 +7,6 @@ use Faker\Generator;
 
 trait WithFaker
 {
-
     /**
      *
      * @var Generator $faker

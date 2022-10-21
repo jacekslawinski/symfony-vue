@@ -56,7 +56,7 @@ class User
     #[ORM\Column(length: 255, nullable: true)]
     private ?string $password = null;
 
-    #[ORM\OneToMany(targetEntity: "UserHardware", mappedBy: 'user', cascade:['remove'])]
+    #[ORM\OneToMany(targetEntity: UserHardware::class, mappedBy: 'user', cascade:['remove'])]
     #[Groups(['user'])]
     private Collection $userHardwares;
 
@@ -169,10 +169,10 @@ class User
 
     /**
      *
-     * @param UserHardware[] $userHardwares
-     * @return void
+     * @param array|UserHardware $userHardwares
+     * @return self
      */
-    public function setUserHardwares($userHardwares): self
+    public function setUserHardwares(array|UserHardware $userHardwares): self
     {
         $this->userHardwares = new ArrayCollection(
             is_array($userHardwares) ? $userHardwares : [$userHardwares]

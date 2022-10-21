@@ -7,7 +7,7 @@ use App\Entity\Hardware;
 trait CreateHardwareTrait
 {
     use WithFaker;
-    
+
     /**
      *
      * @param int $count, default: 1

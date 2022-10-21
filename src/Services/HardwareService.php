@@ -34,7 +34,7 @@ final class HardwareService
 
     /**
      *
-     * @return JsonResponse
+     * @return AbstractRespondJson
      */
     public function getHardwareList(): AbstractRespondJson
     {

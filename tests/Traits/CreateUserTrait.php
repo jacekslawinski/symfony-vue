@@ -7,7 +7,7 @@ use App\Entity\User;
 trait CreateUserTrait
 {
     use WithFaker;
-    
+
     /**
      *
      * @param int $count, default: 1

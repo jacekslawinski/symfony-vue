@@ -17,7 +17,7 @@ final class SystemController extends AbstractController
 
     /**
      *
-     * @param private|SystemService $systemService
+     * @param SystemService $systemService
      */
     public function __construct(
         private readonly SystemService $systemService
@@ -53,8 +53,8 @@ final class SystemController extends AbstractController
 
     /**
      *
-     * @param Hardware $hardware
      * @param Request $request
+     * @param System $system, default: null
      * @return JsonResponse
      */
     #[Route('/system/{system}', methods: ['PUT'])]

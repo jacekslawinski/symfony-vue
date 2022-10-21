@@ -12,12 +12,11 @@ use Symfony\Component\HttpKernel\KernelEvents;
 
 final class ApiExceptionSubscriber implements EventSubscriberInterface
 {
-
     /**
      *
      * @param ExceptionEvent $eventException
      */
-    public function onKernelException(ExceptionEvent $eventException)
+    public function onKernelException(ExceptionEvent $eventException): void
     {
         $event = $eventException->getThrowable();
         if (!$event instanceof ValidationException) {

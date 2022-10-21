@@ -16,7 +16,6 @@ use Symfony\Component\HttpFoundation\Request;
 
 final class SystemService
 {
-
     /**
      *
      * @param SystemRepository $systemRepository
@@ -29,7 +28,7 @@ final class SystemService
 
     /**
      *
-     * @return JsonResponse
+     * @return AbstractRespondJson
      */
     public function getSystemList(): AbstractRespondJson
     {

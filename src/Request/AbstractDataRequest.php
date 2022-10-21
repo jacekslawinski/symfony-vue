@@ -12,7 +12,6 @@ use Symfony\Component\Validator\Validator\ValidatorInterface;
 
 abstract class AbstractDataRequest
 {
-
     /**
      *
      * @var ValidatorInterface $validator
@@ -39,7 +38,6 @@ abstract class AbstractDataRequest
     /**
      *
      * @param Request $request
-     * @param array $allowedProperties
      * @return array
      */
     public function getRequestedData(Request $request): array

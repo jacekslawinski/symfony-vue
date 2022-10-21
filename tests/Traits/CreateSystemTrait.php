@@ -7,7 +7,7 @@ use App\Entity\System;
 trait CreateSystemTrait
 {
     use WithFaker;
-    
+
     /**
      *
      * @param int $count, default: 1

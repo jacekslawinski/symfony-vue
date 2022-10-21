@@ -29,7 +29,7 @@ final class UserService
 
     /**
      *
-     * @return JsonResponse
+     * @return AbstractRespondJson
      */
     public function getUserList(): AbstractRespondJson
     {

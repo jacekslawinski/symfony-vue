@@ -40,7 +40,7 @@ class UserHardwareTest extends AbstractTestCase
     {
         $hardware = $this->createHardware();
         $user = $this->createUser();
-        $this->postRequest(ApiUrls::API_HARDWARE_ROUTE . '/' . ($hardware->getId() + 1). '/user/' . $user->getId());
+        $this->postRequest(ApiUrls::API_HARDWARE_ROUTE . '/' . ($hardware->getId() + 1) . '/user/' . $user->getId());
         $this->assertResponseStatusCodeSame(JsonResponse::HTTP_BAD_REQUEST);
     }
 

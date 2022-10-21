@@ -24,6 +24,7 @@ final class HardwareController extends AbstractController
         private readonly HardwareService $hardwareService
     ) {
     }
+
     #[Route('/hardware', methods: ['GET'])]
     public function index(): JsonResponse
     {
@@ -82,24 +83,24 @@ final class HardwareController extends AbstractController
 
     /**
      *
-     * @param Hardware $hardware
-     * @param DeleteHardwareUserOperation $deleteHardwareUserOperation
+     * @param Request $request
+     * @param Hardware $hardware, default: null
      * @return JsonResponse
      */
     #[Route('/hardware/{hardware}/user', methods: ['DELETE'])]
-     public function deleteUserHardware(Request $request, Hardware $hardware = null): JsonResponse
+    public function deleteUserHardware(Request $request, Hardware $hardware = null): JsonResponse
     {
         if (null === $hardware) {
             return $this->json([], JsonResponse::HTTP_BAD_REQUEST);
         }
-        $response = $this->hardwareService->deleteUserHardware($hardware, $request);
+        $response = $this->hardwareService->deleteUserHardware($hardware);
         return $this->json($response->getResponseData(), $response->getResponseStatus());
     }
 
     /**
      *
-     * @param Hardware $hardware
-     * @param AddHardwareUserOperation $addHardwareUserOperation
+     * @param Hardware $hardware, default: null
+     * @param User $user, default: null
      * @return JsonResponse
      */
     #[Route('/hardware/{hardware}/user/{user}', methods: ['POST'])]
