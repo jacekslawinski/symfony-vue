@@ -13,8 +13,7 @@ RUN apt-get update && apt-get install -y \
     docker-php-ext-enable pdo_mysql mysqli xdebug && \
     npm install npm@latest -g && \
     npm install n -g && \
-    n latest && \
-    chmod g+w -R /app/var
+    n latest
 COPY ./xdebug.ini /usr/local/etc/php/conf.d/docker-php-ext-xdebug.ini
 WORKDIR /app
 ENTRYPOINT ["/app/bin/build.sh"]

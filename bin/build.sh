@@ -17,4 +17,5 @@ echo "* STARTS: npm run build                        *"
 npm run build
 echo "*                DONE                         *"
 echo "***********************************************"
+chmod g+w -R /app/var
 tail -f /dev/null
